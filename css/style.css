@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+
+/*-------------------------
+  初期値
+-------------------------*/
+/* ルート(最上位)セレクタでCSS変数を定義 */
+:root {
+  --key-color: #8e44ad;
+  --sub-color:#7e349d;
+}
+
+body{
+  padding-top:72px;
+    /* ページ内リンクのアニメーションスムーズを追加 */
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    padding-top:58px;
+  }
+}
+
+ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+
+/*-------------------------
+  トップ
+-------------------------*/
+
+.topics p{
+  text-align: justify;
+  display: -webkit-box; /* Flexコンテナに変換 */
+  /* 要素内の配置方向(垂直水平)を選択 */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7; /* 表示行の高さを保持 */
+  overflow: hidden; /* はみ出した文字を隠す */
+  /*※ 2022/07現在、ベンダープリフィックスが必要。*/
+}
+
+.topics .col-lg-4 {
+  /* メニューで隠れないようにスクロール時の位置を変更 */
+  scroll-margin-top: 50vw;
+}
+
+
+.btn-primary{
+  background-color: var(--key-color);
+  border: 1px solid var(--key-color);
+}
+
+.btn-primary:hover{
+  background-color: var(--sub-color);
+  border: 1px solid var(--sub-color);
+}
+
+footer a{
+  color: var(--key-color);
+}
+
+footer a:hover{
+  color: var(--sub-color);
+}
